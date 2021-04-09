@@ -1,0 +1,52 @@
+/* pages/map/map.wxss */
+page{
+  background-color:#fff;
+  height:100%;
+}
+.maps{
+  width: 750rpx;
+  height:100%;
+}
+/* .foottext{
+  width: 750rpx;
+  background-color: #fff;
+
+} */
+.footnr{
+  background-color:#fff;
+  position: fixed;
+  bottom: 100rpx;
+  width: 750rpx;
+  /* height: 350rpx; */
+  padding-left: 40rpx;
+  /* display: flex;
+  flex-direction: column; */
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 10rpx;
+}
+.main{
+  margin-top: 15rpx ;
+  width: 100%;
+  padding:0rpx 20rpx;
+  padding-bottom: 130rpx;
+  position: relative;
+}
+.daohang{
+  position: absolute;
+  right: 50rpx;
+  top: 90rpx;
+}
+.mapicon{
+  width:28rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+}
+.titles{
+  font-weight: bolder;
+  font-size: 30rpx;
+  margin: 20rpx 0rpx;
+}
+.lists view{
+  margin: 10rpx 0rpx;
+}

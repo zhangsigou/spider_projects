@@ -1,0 +1,9 @@
+
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "印象开发区",
+  "navigationBarBackgroundColor": "#ff0000",
+  "navigationBarTextStyle": "white",
+  "onReachBottomDistance":200,
+  "enablePullDownRefresh":true
+}

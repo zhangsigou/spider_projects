@@ -1,0 +1,51 @@
+[2020-11-30 19:53:10][sql] CONNECT:[ UseTime:0.000375s ] mysql:host=127.0.0.1;port=3306;dbname=hong_linyiit_cn;charset=utf8mb4
+[2020-11-30 19:53:10][sql] SHOW FULL COLUMNS FROM `dz_help` [ RunTime:0.001125s ]
+[2020-11-30 19:53:10][sql] SELECT `h`.*,`t`.`typename` FROM `dz_help` `h` INNER JOIN `dz_help_type` `t` ON `h`.`type`=`t`.`pid` WHERE  `h`.`is_deleted` = 0 [ RunTime:0.000262s ]
+[2020-11-30 19:54:06][sql] CONNECT:[ UseTime:0.000391s ] mysql:host=127.0.0.1;port=3306;dbname=hong_linyiit_cn;charset=utf8mb4
+[2020-11-30 19:54:06][sql] SHOW FULL COLUMNS FROM `dz_help` [ RunTime:0.001029s ]
+[2020-11-30 19:54:06][sql] SELECT `h`.*,`t`.`typename` FROM `dz_help` `h` INNER JOIN `dz_help_type` `t` ON `h`.`type`=`t`.`pid` WHERE  `h`.`is_deleted` = 0 [ RunTime:0.000197s ]
+[2020-11-30 19:55:56][sql] CONNECT:[ UseTime:0.000377s ] mysql:host=127.0.0.1;port=3306;dbname=hong_linyiit_cn;charset=utf8mb4
+[2020-11-30 19:55:56][sql] SHOW FULL COLUMNS FROM `dz_help` [ RunTime:0.000987s ]
+[2020-11-30 19:55:56][sql] SELECT `h`.*,`t`.`typename` FROM `dz_help` `h` INNER JOIN `dz_help_type` `t` ON `h`.`type`=`t`.`pid` WHERE  `h`.`is_deleted` = 0 [ RunTime:0.000252s ]
+[2020-11-30 19:58:40][sql] CONNECT:[ UseTime:0.000411s ] mysql:host=127.0.0.1;port=3306;dbname=hong_linyiit_cn;charset=utf8mb4
+[2020-11-30 19:58:40][sql] SHOW FULL COLUMNS FROM `dz_help` [ RunTime:0.001031s ]
+[2020-11-30 19:58:40][sql] SELECT `h`.*,`t`.`typename` FROM `dz_help` `h` INNER JOIN `dz_help_type` `t` ON `h`.`type`=`t`.`pid` WHERE  `h`.`is_deleted` = 0 [ RunTime:0.000237s ]
+[2020-11-30 19:58:55][sql] CONNECT:[ UseTime:0.000411s ] mysql:host=127.0.0.1;port=3306;dbname=hong_linyiit_cn;charset=utf8mb4
+[2020-11-30 19:58:55][sql] SHOW FULL COLUMNS FROM `dz_help` [ RunTime:0.001033s ]
+[2020-11-30 19:58:55][sql] SELECT `h`.*,`t`.`typename` FROM `dz_help` `h` INNER JOIN `dz_help_type` `t` ON `h`.`type`=`t`.`pid` WHERE  `h`.`is_deleted` = 0 [ RunTime:0.000350s ]
+[2020-11-30 20:01:39][sql] CONNECT:[ UseTime:0.000377s ] mysql:host=127.0.0.1;port=3306;dbname=hong_linyiit_cn;charset=utf8mb4
+[2020-11-30 20:01:39][sql] SHOW FULL COLUMNS FROM `dz_help` [ RunTime:0.000979s ]
+[2020-11-30 20:01:39][sql] SELECT `h`.*,`t`.`typename` FROM `dz_help` `h` INNER JOIN `dz_help_type` `t` ON `h`.`type`=`t`.`pid` WHERE  `h`.`is_deleted` = 0 [ RunTime:0.000326s ]
+[2020-11-30 20:05:22][sql] CONNECT:[ UseTime:0.000389s ] mysql:host=127.0.0.1;port=3306;dbname=hong_linyiit_cn;charset=utf8mb4
+[2020-11-30 20:05:22][sql] SHOW FULL COLUMNS FROM `dz_help` [ RunTime:0.000975s ]
+[2020-11-30 20:05:22][sql] SELECT `h`.*,`t`.`typename` FROM `dz_help` `h` INNER JOIN `dz_help_type` `t` ON `h`.`type`=`t`.`pid` WHERE  `h`.`is_deleted` = 0 [ RunTime:0.000222s ]
+[2020-11-30 20:07:55][sql] CONNECT:[ UseTime:0.000364s ] mysql:host=127.0.0.1;port=3306;dbname=hong_linyiit_cn;charset=utf8mb4
+[2020-11-30 20:07:55][sql] SHOW FULL COLUMNS FROM `dz_help` [ RunTime:0.001154s ]
+[2020-11-30 20:07:55][sql] SELECT `h`.*,`t`.`typename` FROM `dz_help` `h` INNER JOIN `dz_help_type` `t` ON `h`.`type`=`t`.`pid` WHERE  `h`.`is_deleted` = 0 [ RunTime:0.000411s ]
+[2020-11-30 20:08:45][sql] CONNECT:[ UseTime:0.000367s ] mysql:host=127.0.0.1;port=3306;dbname=hong_linyiit_cn;charset=utf8mb4
+[2020-11-30 20:08:45][sql] SHOW FULL COLUMNS FROM `dz_help` [ RunTime:0.001003s ]
+[2020-11-30 20:08:45][sql] SELECT `h`.*,`t`.`typename` FROM `dz_help` `h` INNER JOIN `dz_help_type` `t` ON `h`.`type`=`t`.`pid` WHERE  `h`.`is_deleted` = 0 [ RunTime:0.000307s ]
+[2020-11-30 20:09:45][sql] CONNECT:[ UseTime:0.000384s ] mysql:host=127.0.0.1;port=3306;dbname=hong_linyiit_cn;charset=utf8mb4
+[2020-11-30 20:09:45][sql] SHOW FULL COLUMNS FROM `dz_help` [ RunTime:0.001071s ]
+[2020-11-30 20:09:45][sql] SELECT `h`.*,`t`.`typename` FROM `dz_help` `h` INNER JOIN `dz_help_type` `t` ON `h`.`type`=`t`.`pid` WHERE  `h`.`is_deleted` = 0 [ RunTime:0.000234s ]
+[2020-11-30 20:11:00][sql] CONNECT:[ UseTime:0.000526s ] mysql:host=127.0.0.1;port=3306;dbname=hong_linyiit_cn;charset=utf8mb4
+[2020-11-30 20:11:00][sql] SHOW FULL COLUMNS FROM `dz_help` [ RunTime:0.001006s ]
+[2020-11-30 20:11:00][sql] SELECT `h`.*,`t`.`typename` FROM `dz_help` `h` INNER JOIN `dz_help_type` `t` ON `h`.`type`=`t`.`pid` WHERE  `h`.`is_deleted` = 0 [ RunTime:0.000326s ]
+[2020-11-30 20:11:13][sql] CONNECT:[ UseTime:0.002722s ] mysql:host=119.45.7.224;port=3306;dbname=hong_linyiit_cn;charset=utf8mb4
+[2020-11-30 20:11:13][sql] SHOW FULL COLUMNS FROM `dz_help` [ RunTime:0.001366s ]
+[2020-11-30 20:11:13][sql] SELECT `h`.*,`t`.`typename` FROM `dz_help` `h` INNER JOIN `dz_help_type` `t` ON `h`.`type`=`t`.`pid` WHERE  `h`.`is_deleted` = 0 [ RunTime:0.000651s ]
+[2020-11-30 20:11:15][sql] CONNECT:[ UseTime:0.001538s ] mysql:host=119.45.7.224;port=3306;dbname=hong_linyiit_cn;charset=utf8mb4
+[2020-11-30 20:11:15][sql] SHOW FULL COLUMNS FROM `dz_help` [ RunTime:0.001405s ]
+[2020-11-30 20:11:15][sql] SELECT `h`.*,`t`.`typename` FROM `dz_help` `h` INNER JOIN `dz_help_type` `t` ON `h`.`type`=`t`.`pid` WHERE  `h`.`is_deleted` = 0 [ RunTime:0.000649s ]
+[2020-11-30 20:11:15][sql] CONNECT:[ UseTime:0.001418s ] mysql:host=119.45.7.224;port=3306;dbname=hong_linyiit_cn;charset=utf8mb4
+[2020-11-30 20:11:15][sql] SHOW FULL COLUMNS FROM `dz_help` [ RunTime:0.001321s ]
+[2020-11-30 20:11:15][sql] SELECT `h`.*,`t`.`typename` FROM `dz_help` `h` INNER JOIN `dz_help_type` `t` ON `h`.`type`=`t`.`pid` WHERE  `h`.`is_deleted` = 0 [ RunTime:0.000715s ]
+[2020-11-30 20:11:16][sql] CONNECT:[ UseTime:0.001463s ] mysql:host=119.45.7.224;port=3306;dbname=hong_linyiit_cn;charset=utf8mb4
+[2020-11-30 20:11:16][sql] SHOW FULL COLUMNS FROM `dz_help` [ RunTime:0.006573s ]
+[2020-11-30 20:11:16][sql] SELECT `h`.*,`t`.`typename` FROM `dz_help` `h` INNER JOIN `dz_help_type` `t` ON `h`.`type`=`t`.`pid` WHERE  `h`.`is_deleted` = 0 [ RunTime:0.000623s ]
+[2020-11-30 20:11:47][sql] CONNECT:[ UseTime:0.001401s ] mysql:host=119.45.7.224;port=3306;dbname=hong_linyiit_cn;charset=utf8mb4
+[2020-11-30 20:11:47][sql] SHOW FULL COLUMNS FROM `dz_help` [ RunTime:0.001369s ]
+[2020-11-30 20:11:47][sql] SELECT `h`.*,`t`.`typename` FROM `dz_help` `h` INNER JOIN `dz_help_type` `t` ON `h`.`type`=`t`.`pid` WHERE  `h`.`is_deleted` = 0 [ RunTime:0.000626s ]
+[2020-11-30 20:11:55][sql] CONNECT:[ UseTime:0.001391s ] mysql:host=119.45.7.224;port=3306;dbname=hong_linyiit_cn;charset=utf8mb4
+[2020-11-30 20:11:55][sql] SHOW FULL COLUMNS FROM `dz_help` [ RunTime:0.001395s ]
+[2020-11-30 20:11:55][sql] SELECT `h`.*,`t`.`typename` FROM `dz_help` `h` INNER JOIN `dz_help_type` `t` ON `h`.`type`=`t`.`pid` WHERE  `h`.`is_deleted` = 0 [ RunTime:0.000644s ]

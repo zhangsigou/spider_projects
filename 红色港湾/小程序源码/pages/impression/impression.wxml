@@ -1,0 +1,35 @@
+<!--index.wxml-->
+
+<!-- 图片 -->
+<view class="cu-card case {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="{{banner.img}}" mode="widthFix"></image>
+      <view class="cu-tag bg-red">{{banner.rtitle}}</view>
+      <view class="cu bg-shadeBottom">
+      <view class="bjt">
+        <text class="wsx">{{banner.title}}</text></view>
+      </view>
+    </view>
+     </view>
+    </view>
+    <!-- 图片结束 -->
+    <!-- 内容 -->
+    <view class="dk">
+  <view class="nr" wx:for="{{wz}}" wx:for-item="item" wx:key="key" data-index="{{index}}" data-id="{{item.id}}" bindtap="kfq">
+  <view class="zb">
+  <view class="title" >
+  <view class="wza" >{{item.catename}}</view>
+  </view>
+  <view class="titlesz">
+      <view class="titles">微山县开发区党组织</view>
+      <view class="titless"  >2020-12-28 10:10:10</view>
+  </view>
+  </view>
+  <view class="yb"><image src="{{item.catimg}}" class="tp"></image>
+  </view>
+    </view>
+    </view>
+  
+<!-- 底部tabber -->
+<!-- <include  src="../publicsth/publicsth" /> -->

@@ -1,0 +1,32 @@
+<!--pages/member/member.wxml-->
+<wxs src="../../wxs/subutil.wxs" module="tools" />
+<!-- 内容 -->
+<block wx:if="{{flag!=0}}">
+<view class="cu-form-group" wx:for="{{list}}" wx:key="key" data-id="{{item.id}}" bindtap="nav">
+    <view class="paddinglr">
+      <view class="solidbottom">
+        <view class="wz">
+          <view>{{tools.sub(item.title)}}</view>
+        </view>
+        <view class="rq">
+          <text >{{item.pubdate}}</text>
+        </view>
+      </view>
+    </view>
+		<view class="cuavatar ">
+      <image src="{{item.thumb}}"></image>
+    </view>
+	</view>
+</block>
+<block wx:else>
+ <view class="solids-bottom padding-xs flex align-center">
+    <view class="flex-sub text-center">
+      <view class="solid-bottom text-xl padding">
+        <text class="text-black text-bold">暂无数据</text>
+      </view>
+      
+    </view>
+  </view>
+</block>
+	
+

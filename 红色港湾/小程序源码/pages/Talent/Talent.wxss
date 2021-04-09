@@ -1,0 +1,76 @@
+/**index.wxss**/
+/* 图片 */
+.cu-tag{
+  margin-top:15rpx;
+  margin-right:20rpx;
+  height: 25rpx;
+  border-radius: 10rpx;
+  background-color: red;
+}
+.bjt{
+  width:100%;
+  height:60rpx;
+  background-color: black;
+  margin:auto;
+  background-color:rgba(25, 25, 26, 0.3);
+}
+/* 企业招聘位置 */
+.cu{
+position: absolute;
+bottom: 0;
+width: 100%;
+background-color: transparent;
+}
+/* 企业招聘文字 */
+.text-cut{
+display: block;
+padding-top:8rpx;
+margin-left:12rpx;
+}
+/* 内容 */
+.nr{
+  width: 90%;
+  height:180rpx;
+  margin: 0 auto;
+  background-color: white;
+  margin-top: 2%;
+}
+.zb{
+  width: 55%;
+  height: 100%;
+  /* border: 1px solid red; */
+  float: left;
+  margin-top: 15rpx;
+}
+.yb{
+  width: 30%;
+  height: 100%;
+  /* border: 1px solid red; */
+  float: right;
+}
+/* 文字 */
+title{
+margin-top: 10rpx;
+}
+.titles{
+  font-size: 20rpx;
+  color:#cacbcd;
+  margin-top: 15rpx;
+  margin-left: 10rpx;
+}
+.wza{
+  margin-left: 10rpx;
+}
+/* 图片 */
+.yb image{
+  width: 90%;
+  height: 150rpx;
+  margin-top:20rpx;
+}
+.tp{
+  width: 100%;
+  height: 100%;
+}
+.dk{
+  margin-top: -25rpx;
+}

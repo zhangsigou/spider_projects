@@ -1,0 +1,83 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/talentxq/talentxq",
+    "pages/indexxq/indexxq",
+    "pages/impressionxq/impressionxq",
+    "pages/Talent/Talent",
+    "pages/impression/impression",
+    "pages/details/Details",
+    "pages/publicsth/publicsth",
+    "pages/help/help",
+    "pages/help/complete",
+    "pages/map/map",
+    "pages/member/member",
+    "pages/logs/logs",
+    "pages/news/list",
+    "pages/daohang/index",
+    "pages/regeo/regeo",
+    "pages/weather/weather",
+    "pages/poi/poi",
+    "pages/staticmap/staticmap",
+    "pages/navigation_car/navigation",
+    "pages/navigation_bus/navigation",
+    "pages/navigation_walk/navigation",
+    "pages/navigation_ride/navigation",
+    "pages/navigation_car_detail/navigation",
+    "pages/navigation_walk_detail/navigation",
+    "pages/navigation_ride_detail/navigation",
+    "pages/inputtips/input"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ED292A",
+    "navigationBarTitleText": "红色港湾",
+    "navigationBarTextStyle": "white"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取你的位置信息"
+    }
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#d81e06",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "pages/image/shouyeb.png",
+        "selectedIconPath": "pages/image/shouyebs.png",
+        "text": "党建首页"
+      },
+      {
+        "pagePath": "pages/map/map",
+        "iconPath": "pages/image/dituhei.png",
+        "selectedIconPath": "pages/image/dituheis.png",
+        "text": "党建地图"
+      },
+      {
+        "pagePath": "pages/help/help",
+        "iconPath": "pages/image/bangbanhei.png",
+        "selectedIconPath": "pages/image/bangbanheis.png",
+        "text": "红色帮办"
+      },
+      {
+        "pagePath": "pages/Talent/Talent",
+        "iconPath": "pages/image/rencaihei.png",
+        "selectedIconPath": "pages/image/rencaiheis.png",
+        "text": "人才之家"
+      },
+      {
+        "pagePath": "pages/impression/impression",
+        "iconPath": "pages/image/kaifaquhei.png",
+        "selectedIconPath": "pages/image/kaifaquheis.png",
+        "text": "印象开发区"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

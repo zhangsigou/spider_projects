@@ -1,0 +1,42 @@
+<!-- 返回 -->
+<view class="navtop"></view>
+<!-- 地图显示 -->
+<view style="height:70%">
+   <!-- <map class="maps" latitude="{{latitude}}" longitude="{{longitude}}" makers="{{makers}}"></map> -->
+   <map class="maps" id="map" longitude="{{map.longitude}}" latitude=" {{map.latitude}}" markers="{{map.markers}}" scale="14" show-location enable-traffic="true" enable-building="true" wx:if="{{map}}" bindmarkertap="maskerstap" bindregionchange="regionchange"> 
+  </map>
+</view>
+<!-- 页脚地区纤细信息 -->
+<view class="main" wx:for="{{textlist}}" wx:key="key">
+  <view class="daohang" bindtap="daohangs">
+    <image style="width:90rpx;height:90rpx" src="../image/daohang.png"></image>
+  </view>
+  <view class="lists">
+      <text class="titles">{{item.mapname}}</text>
+      <view>
+          <image src="../image/dizhi.png" class="mapicon"></image>
+          <text>地址：{{item.mapdizhi}}</text>
+      </view>
+      <view>
+          <image src="../image/duoren.png" class="mapicon"></image>
+          <text>党员人数：{{item.mappeople}}人</text>
+      </view>
+      <view>
+          <image src="../image/lingdao.png" class="mapicon"></image>
+          <text>党支部书记：{{item.mapshuji}}</text>
+      </view>
+      <view>
+          <image src="../image/lianxiren.png" class="mapicon"></image>
+          <text>联系人：{{item.maplian}} {{item.mapphone}}</text>
+      </view>
+      <view>
+          <image src="../image/jianjie.png" class="mapicon"></image>
+          <text>简介: {{item.description}}</text>
+      </view>
+  </view>
+</view>
+<!-- <view class="foottext" > -->
+ 
+<!-- </view> -->
+<!-- 底部tabber -->
+<!-- <include  src="../publicsth/publicsth" /> -->

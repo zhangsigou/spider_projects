@@ -1,0 +1,51 @@
+<!-- 页头 -->
+<view class="head">
+  <view wx:for="{{list}}" style="width:25%" wx:key="key">
+    <view style="width:100%" bindtap="Jump" data-id="{{item.id}}">
+      <image src="{{item.image}}" style="height:60rpx;width:60rpx"></image>
+      <view style="margin-top:10rpx">{{item.name}}</view>
+    </view>
+  </view>
+</view>
+<view style="height:50rpx;background-color:#F6F6F6"></view>
+<!-- banner 轮播图 -->
+<view style="width:100%;background-color:#F6F6F6">
+  <view class="banner">
+    <swiper indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" indicator-color="#fff"
+      indicator-active-color="#f00" style="height:300rpx;width:100%">
+      <swiper-item wx:for="{{swiperList}}" wx:key="key">
+        <image src="{{item.thumb}}" mode="aspectFill" style="height:300rpx;width:100%"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
+<view style="height:30rpx;background-color:#F6F6F6"></view>
+<!-- 公告 -->
+<view class="announcement">
+  <view style="height:80rpx;width:100%;display:flex;flex-direction: row;">
+    <view style="width:60rpx;height:33rpx;display:flex;flex-direction: column;">
+      <view>
+        <image src="../image/gonggao.png" style="width:60rpx;height:33rpx;margin-top:27rpx"></image>
+      </view>
+      <!-- <view style="font-size: 25rpx;line-height:25rpx">通知</view> -->
+    </view>
+    <swiper vertical="true" autoplay="true" interval="5000" style="height:80rpx;width:720rpx">
+      <swiper-item wx:for="{{noticelist}}" wx:key="key">
+        <view class="swp" bindtap="notifytz"
+          data-index="{{index}}">{{item.title}}</view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
+<view style="height:30rpx;background-color:#F6F6F6"></view>
+
+<view style="background-color:#fff;">
+  <view class="grid col-{{2}} margin-bottom text-center padding" wx:for="{{1}}" wx:key="key">
+    <view class=" padding " wx:for="{{lists}}" wx:key="key"
+      style="width:300rpx;margin:4% 23rpx;height:110rpx;background-color:{{item.color}};border-radius:10rpx;color:#fff;font-size:32rpx;display:flex;flex-direction: row;line-height:50rpx"
+      bindtap="nav" data-id="{{item.id}}">
+      <view style="width:76%">{{item.name}}</view>
+      <image src="{{item.image}}" style="width:50rpx;height:40rpx;"></image>
+    </view>
+  </view>
+</view>

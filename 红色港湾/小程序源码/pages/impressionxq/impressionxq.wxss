@@ -1,0 +1,23 @@
+/* pages/details/Details.wxss */
+/* 本页总体布局 */
+/* 标题 */
+.bt{
+  font-size: 20px;
+}
+.toptext{
+  width: 700rpx;
+  height: auto;
+  margin: 10rpx auto;
+  display: flex;
+  flex-direction: column;
+}
+/* 文字共有属性 */
+.toptext text{
+  margin-top: 10rpx;
+  line-height:50rpx;
+}
+/* 图片 */
+.toptext image{
+  width: 700rpx;
+  height: 500rpx;
+}

@@ -1,0 +1,18 @@
+<view class="toptext">
+<!-- 头部标题 -->
+<view style="padding:20rpx">
+  <text style="font-size:40rpx;font-weight:600;color:#000">{{textslist.title}}</text>
+</view>  
+<!-- 文章作者/来源 -->
+  <view style="padding-left:20rpx">
+  <text style="color:#C5C9C9">作者：{{textslist.author}}</text>
+  </view>
+<!-- 图片 -->
+  <view style="padding:20rpx">
+    <image src="{{textslist.thumb}}"></image>
+  </view>
+  <!-- 详细内容 -->
+  <view style="padding:20rpx">
+    <rich-text nodes="{{introduceList}}"></rich-text>
+  </view>
+</view>

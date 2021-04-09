@@ -1,0 +1,11 @@
+<view class="toptext">
+<!-- 头部标题 -->
+  <text style="font-size:35rpx;font-weight:600;color:#000">{{textslist.title}}</text>
+<!-- 文章作者/来源 -->
+  <text style="color:#C5C9C9">作者：{{textslist.author}}</text>
+<!-- 图片 -->
+  <image src="{{textslist.thumb}}"></image>
+  <!-- 详细内容 -->
+  <!-- <text style="font-weight:500;color:#000">{{item.content}}</text> -->
+  <rich-text nodes="{{textslist.content}}"></rich-text>
+</view>

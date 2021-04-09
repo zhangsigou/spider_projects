@@ -1,0 +1,47 @@
+/* pages/member/member.wxss */
+.cu-form-group{
+  width: 100%;
+  height:200rpx;
+  background-color: white;
+  padding:1rpx 30rpx;
+  display: flex;
+  align-items: center;
+  min-height: 100rpx;
+  margin-top:5px;
+}
+/* 文字 */
+.solidbottom{
+  margin-bottom:100rpx;
+  margin-right: 10rpx;
+  font-size:30rpx;
+  margin-top: 20px;
+}
+/* 文字之间空隙 */
+.solidbottom view{
+padding-top:10rpx;
+}
+.solidbottom text{
+  display: block;
+ margin-top:10rpx;
+  }
+  .wz{
+    margin-top:50rpx;
+  
+    display: block;
+    margin-top:30PX;
+  }
+  /* 日期 */
+.rq{
+color: #cacbcd;
+margin-top:10rpx;
+}
+/* 图片 */
+.cuavatar{
+  width:200rpx;
+  height:150rpx;
+  margin-bottom:12rpx;
+}
+.cuavatar image{
+  width:200rpx;
+  height:150rpx;
+}

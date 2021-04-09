@@ -1,0 +1,11 @@
+
+  <view class=" padding-xs flex align-center" style="margin-top:65rpx">
+    <view class="flex-sub text-center">
+      <view class=" text-xsl ">
+        <!-- <text class=" cuIcon-roundcheckfill text-red "></text> -->
+        <image src="../image/complete.png" style="width:230rpx;height:230rpx"></image>
+      </view>
+      <view>您的需求已上报</view>
+      <view style="margin-top:15rpx">红色帮办员随后和您联系</view>
+    </view>
+  </view>

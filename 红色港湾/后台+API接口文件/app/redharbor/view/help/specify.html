@@ -1,0 +1,46 @@
+{extend name="../../admin/view/main"}
+
+{block name="style"}{include file='help/formstyle'}{/block}
+
+{block name='content'}
+<form class="layui-form layui-card" action="{:request()->url()}" data-auto="true" method="post" autocomplete="off" style="padding-top: 20px;height: 400px">
+    <div class="layui-form-item">
+        <input type="hidden" value="{$vo.id|default=''}" name="id">
+        <input type="hidden" value="1" name="status">
+        <label class="layui-form-label">请指定组织：</label>
+        <div class="layui-input-block" style="width: 550px;height: auto">
+            <select required name="organizntionid" lay-verify="required">
+
+<!--                {foreach $typelist as $key=>$vos}-->
+<!--                {eq name='vos.id' value='$vo.type|default=0'}-->
+<!--                <option value="{$vos.id}" selected >{$vos.hname}</option>-->
+<!--                {else}-->
+<!--                <option value="{$vos.id}">{$vos.hname}</option>-->
+<!--                {/eq}-->
+<!--                {/foreach}-->
+
+                {foreach $lists as $key=>$val}
+                {eq name='$val.id' value='$vo.organizntionid|default=0'}
+                <option value="{$val.id}" selected onclick="specify">{$val.title}</option>
+                {else}
+                <option value="{$val.id}" onclick="specify">{$val.title}</option>
+                {/eq}
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item text-center" style="margin-top: 40px">
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>
+    </div>
+</form>
+
+{/block}
+
+
+{block name='script'}
+<script>
+    form.render();
+
+</script>
+{/block}

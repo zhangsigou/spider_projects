@@ -1,0 +1,49 @@
+<!-- 红色帮办form表单 -->
+<form bindsubmit="submit" >
+  <view class="cu-form-group place" bindtap="address" style="margin-top:15rpx">
+    <view class="titles formstyle">地址:</view>
+    <view class="names" style="width:75%;color:#938484;display: flex;flex-direction: row;"><text class="cuIcon-locationfill lg text-gray"></text> 
+		<input disabled="true" placeholder="请选择地址" name="users" value="{{addresses.address}}" style="width: 350rpx;margin:30rpx 0 0 15rpx;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:90%;"></input>
+		</view><text class="cuIcon-right lg text-gray"></text>
+  </view>
+
+  <view class="cu-form-group place">
+		<view class="titles formstyle">帮办标题:</view>
+		<input placeholder="请填写帮办需求" name="title" value="" class="title"></input>
+	</view>
+
+  <view class="cu-form-group place">
+		<view class="titles formstyle" >求助人:</view>
+		<input placeholder="请填写您的姓名" name="users" class="users"></input>
+	</view>
+
+  <view class="cu-form-group place">
+		<view class="titles formstyle" >联系方式:</view>
+		<input placeholder="请填写您的联系方式" name="telphone" type="number" class="telphone" style="color: #808080;"></input>
+	</view>
+
+	<view class="cu-form-group textareas">
+		<view class="titles formstyle">帮办类型:</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}" data-id='{{picker[index].id}}' range-key="hname">
+			<view class="pickers{{colors?black:gray}}" style="text-align: left;color: #808080;">
+				{{index?picker[index].hname:'请选择帮办类型'}}
+			</view>
+			
+		</picker>
+	</view>
+
+	<view class="cu-form-group textareas">
+		<view class="titles formstyle" >详情:</view>
+		<textarea placeholder="请填写详细内容" auto-focus name="content" class="content" style="height: 150rpx;padding-top:60rpx;"></textarea>
+	</view>
+  <button class="submits" style="width:90%" formType="submit" >提交帮办</button>
+</form>
+
+<view class="ps">
+	<!-- *为人民服务是我们的第一宗旨 -->
+</view>
+<!-- <include src="../publicsth/publicsth" /> -->
+
+
+
+

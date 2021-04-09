@@ -1,0 +1,154 @@
+{extend name="../../admin/view/main"}
+
+{block name="style"}{include file='organizntion/formstyle'}{/block}
+
+{block name='content'}
+    <form class="layui-form layui-card" action="{:request()->url()}" data-auto="true" method="post" autocomplete="off" style="padding-top: 20px">
+          <div class="layui-form-item">
+                <label class="layui-form-label">党组织全称：</label>
+                <div class="layui-input-block">
+                    <input type="hidden" value="{$vo.id|default=''}" name="id">
+                      <input type="text" name="title" required  lay-verify="required|title" placeholder="请输入党组织全称" autocomplete="off" class="layui-input" style="width:450px" value="{$vo.title|default=''}">
+                    </div>
+              </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">党组织人数：</label>
+            <div class="layui-input-block">
+                <input type="hidden" value="{$vo.id|default=''}" name="id">
+                <input type="text" name="population" required  lay-verify="required" placeholder="请输入党组织人数" autocomplete="off" class="layui-input" style="width:450px" value="{$vo.population|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">类型：</label>
+            <div class="layui-input-block" style="width: 450px;height: auto">
+                <select required name="type" lay-verify="required">
+
+                    {foreach $typelist as $key=>$vos}
+                    {eq name='vos.id' value='$vo.type|default=0'}
+                    <option  value="{$vos.id}" selected >{$vos.typename}</option>
+                    {else}
+                    <option value="{$vos.id}">{$vos.typename}</option>
+                    {/eq}
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+          <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">简介：</label>
+                <div class="layui-input-block" >
+                      <textarea required name="description" placeholder="请填写简介" class="layui-textarea" lay-verify="layui-textarea|contact" style="width: 450px" >{$vo.description|default=''}</textarea>
+                    </div>
+              </div>
+
+         <div class="layui-form-item" >
+             <label class="layui-form-label">地址：</label>
+             <div class="layui-input-inline" style="display: flex;flex-direction: row ;width: 600px">
+                 <input type="text" id="address" name="address" required  lay-verify="required" placeholder="请填写地址" autocomplete="off" class="layui-input" style="width: 450px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; " value="{$vo.address|default=''}" >
+                 <div style="margin-left: 20px"><button type="button" class="layui-btn openmap">地图选址</button></div>
+             </div>
+         </div>
+             <div class="layui-form-item" >
+                 <label class="layui-form-label" style="margin-top: 13px">经度：</label>
+                 <div class="layui-input-inline" style="margin-top: 13px">
+                     <input readonly type="text" id="lng" name="lng" required  lay-verify="required" placeholder="请填写经度" autocomplete="off" class="layui-input" style="width:450px" value="{$vo.lng|default=''}" >
+                 </div>
+             </div>
+             <div class="layui-form-item">
+                 <label class="layui-form-label">纬度：</label>
+                 <div class="layui-input-inline">
+                     <input readonly type="text" id="lat" name="lat" required  lay-verify="required" placeholder="请填写纬度" autocomplete="off" class="layui-input" style="width:450px" value="{$vo.lat|default=''}" >
+                 </div>
+             </div>
+
+          <div class="layui-form-item">
+              <label class="layui-form-label">书记：</label>
+             <div class="layui-input-block">
+                 <input type="text" name="secretary" required  lay-verify="required|fname" placeholder="请输入书记姓名" autocomplete="off" class="layui-input" style="width:450px" value="{$vo.secretary|default=''}">
+                  </div>
+              </div>
+            <div class="layui-form-item">
+            <label class="layui-form-label">联系人：</label>
+            <div class="layui-input-block">
+                <input type="text" name="contacts" required  lay-verify="required|fnames" placeholder="请输入联系人" autocomplete="off" class="layui-input" style="width: 450px" value="{$vo.contacts|default=''}">
+            </div>
+            </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">联系人电话：</label>
+            <div class="layui-input-block">
+                <input type="text" name="phone" required  lay-verify="required|phone" placeholder="请输入联系人电话" autocomplete="off" class="layui-input" style="width: 450px" value="{$vo.phone|default=''}">
+            </div>
+        </div>
+             <div class="layui-form-item" >
+            <label class="layui-form-label">服务项目:</label>
+            <div class="layui-input-block">
+                {notempty name='vo.id'}
+                {foreach $catelist as $key=>$val}
+                <input required name="helptype[]" type="checkbox" value="{$val.id}" title="{$val.hname}" type="checkbox" {if condition="in_array($val['id'],$vo.helptype)"}checked{/if} >
+                {/foreach}
+                {/notempty}
+                {empty name='vo.id'}
+                {foreach $catelist as $key=>$val}
+                <input required name="helptype[]" type="checkbox" value="{$val.id}" title="{$val.hname}" type="checkbox" >
+                {/foreach}
+                {/empty}
+
+            </div>
+          </div>
+             <div class="layui-form-item text-center">
+                 <button class="layui-btn" lay-submit="" lay-verify="" type='submit'>保存数据</button>
+                 <button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>
+             </div>
+          
+        </form>
+
+{/block}
+
+
+{block name='script'}
+<script>
+    form.render();
+    $('.openmap').click(function(){
+        layer.open({
+            type: 2,
+            title:"请选择地址",
+            area:['600px','550px'],
+            content: '{:url("maps")}'
+
+        });
+    });
+    form.render();
+    layui.use(['form'], function () {
+        var form = layui.form;
+        //自定义验证规则
+        form.verify({
+            title: function (value) {
+                if (value.length < 5) {
+                    return '党组织全称至少得5个字符啊';
+                }
+            }, fname: function (value) {
+                if (value.length < 2) {
+                    return '请输入至少2位的书记名';
+                }
+            },  fnames: function (value) {
+                if (value.length < 2) {
+                    return '请输入至少2位的联系人名';
+                }
+            },contact: function (value) {
+                if (value.length < 4) {
+                    return '简介请输入至少4个字符';
+                }
+            }
+            , phone: [/^1[3|4|5|7|8]\d{9}$/, '手机必须11位，只能是数字！']
+        });
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+    });
+
+
+</script>
+{/block}

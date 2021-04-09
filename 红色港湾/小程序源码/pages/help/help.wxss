@@ -1,0 +1,54 @@
+/* pages/help/help.wxss */
+page{
+  height: 100%;
+  background-color:#fff;
+}
+.place{
+  width:90%;
+  height: 100rpx;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  border-bottom: 2rpx solid #F1F1F1;
+}
+
+
+.textareas{
+  width:90%;
+  height: 150rpx;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  border-bottom: 2rpx solid #F1F1F1;
+}
+
+.formstyle{
+  width:25%;
+  color:#000;
+  font-weight:700;
+}
+.submits{
+  height: 80rpx;
+  margin: 70rpx auto;
+  border-radius: 10rpx;
+  background-color: #ED292A;
+  color: #fff;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.titles{
+  font-size:30rpx;
+}
+.names{
+  margin-left:10rpx;
+}
+
+.ps {
+  padding: 0 40rpx;
+  color: #666;
+}

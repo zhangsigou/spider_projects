@@ -1,0 +1,34 @@
+ <view class="cu-bar tabbar bg-white foot">
+    <view class="action" bindtap="Homes" >
+      <view class="cuIcon-cu-image">
+        <image src="../image/shouyer.png"></image>
+      </view>
+      <view  class="text-red">党建首页</view>
+    </view>
+    <view bindtap="map"  class="action" wx:if="{{id!==1}}">
+      <view class="cuIcon-cu-image">
+        <image src="../image/dituhei.png"></image>
+      </view>
+      <view class="text-black">党建地图</view>
+    </view >
+    <view bindtap="help" class="action" wx:if="{{id!==2}}">
+      <view class="cuIcon-cu-image">
+        <image src="../image/bangbanhei.png"></image>
+      </view>
+      <view class="text-black">红色帮办</view>
+    </view>
+    <view class="action" bindtap="Talent" wx:if="{{id!==3}}">
+      <view class="cuIcon-cu-image">
+        <image src="../image/rencaihei.png"></image>
+        <!-- <view class="cu-tag badge">99</view> -->
+      </view>
+      <view class="text-black">人才之家</view>
+    </view>
+    <view bindtap="impression" class="action" wx:if="{{id!==4}}">
+      <view class="cuIcon-cu-image">
+        <image src="../image/kaifaquhei.png"></image>
+        <!-- <view class="cu-tag badge"></view> -->
+      </view>
+      <view class="text-black">印象开发区</view>
+    </view>
+  </view>

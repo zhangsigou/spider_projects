@@ -1,0 +1,81 @@
+{extend name='main'}
+
+{block name="button"}
+<!--{if auth('config')}-->
+<a class="layui-btn layui-btn-sm layui-btn-primary" data-modal="{:url('config')}">日志配置</a>
+<!--{/if}-->
+<!--{if auth("clear")}-->
+<button data-load='{:url("clear")}' data-confirm="确定要消除所有日志吗？" class='layui-btn layui-btn-sm layui-btn-primary'>清理日志</button>
+<!--{/if}-->
+<!--{if auth("remove")}-->
+<!--<button data-action='{:url("remove")}' data-rule="id#{key}" data-csrf="{:systoken('remove')}" data-confirm="确定要删除日志吗？" class='layui-btn layui-btn-sm layui-btn-primary'>删除日志</button>-->
+<!--{/if}-->
+{/block}
+
+{block name="content"}
+<div class="think-box-shadow table-block">
+    {include file='organizntion/index_search'}
+    <table class="layui-table margin-top-10" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+                <label><input data-auto-none data-check-target='.list-check-box' type='checkbox'></label>
+            </th>
+
+            <th class='text-left nowrap'>ID</th>
+            <th class='text-left nowrap'>党组织全称</th>
+            <th class='text-left nowrap'>党组织类型</th>
+            <th class='text-left nowrap'>地址</th>
+            <th class='text-left nowrap'>人数</th>
+            <th class='text-left nowrap'>书记</th>
+            <th class='text-left nowrap'>联系人</th>
+            <th class='text-left nowrap'>联系人电话</th>
+            <th class='text-left nowrap'>简介</th>
+            <th class='text-left nowrap'>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+            <label><input data-auto-none data-check-target='.list-check-box' type='checkbox'></label>
+            </th>
+            <th style="width: 40px">{$vo.id}</th>
+            <th style="width: 150px">{$vo.title}</th>
+            <th style="width: 100px">{$vo.typename}</th>
+            <th style="width: 200px">{$vo.address}</th>
+            <th style="width: 40px">{$vo.population}</th>
+            <th style="width: 60px">{$vo.secretary}</th>
+            <th style="width: 60px">{$vo.contacts}</th>
+            <th style="width: 120px">{$vo.phone}</th>
+            <th style="width: 200px">{$vo.description}</th>
+            <th style="width: 160px">
+                <a  data-modal='{:url("edit")}?id={$vo.id}' href='javascript:void(0)' class="layui-btn layui-btn-xs layui-btn-warm" data-title="编辑党组织">编辑</a>
+                <a class="layui-btn layui-btn-xs layui-btn-danger"data-confirm="确定要删除该党组织吗？"  data-action="{:url('remove')}" data-value="id#{$vo.id}" data-csrf="{:systoken('remove')}">删 除</a>
+            </th>
+        </tr>
+        {/foreach}
+        </tbody>
+        {/notempty}
+    </table>
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+</div>
+{/block}
+
+{block name='script'}
+<script>
+    (function (layers) {
+        $('body').off('click', '[data-tips-desc]').on('click', '[data-tips-desc]', function () {
+            return layers.push(layer.tips($(this).find('textarea').html(), this, {tips: 3, time: 0, maxWidth: 500})), false;
+        }).off('click', '.layui-body').on('click', '.layui-body', function () {
+            layers.forEach(function (value, index) {
+                layer.close(value), delete layers[index];
+            });
+        });
+        $(window).on('hashchange', function () {
+            $('.layui-body').trigger('click');
+        });
+    })([]);
+</script>
+{/block}

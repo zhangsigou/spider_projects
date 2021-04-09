@@ -1,0 +1,88 @@
+{extend name='main'}
+
+{block name="button"}
+<!--{if auth('config')}-->
+<a class="layui-btn layui-btn-sm layui-btn-primary" data-modal="{:url('config')}">日志配置</a>
+<!--{/if}-->
+<!--{if auth("clear")}-->
+<button data-load='{:url("clear")}' data-confirm="确定要消除所有日志吗？" class='layui-btn layui-btn-sm layui-btn-primary'>清理日志</button>
+<!--{/if}-->
+<!--{if auth("remove")}-->
+<!--<button data-action='{:url("remove")}' data-rule="id#{key}" data-csrf="{:systoken('remove')}" data-confirm="确定要删除日志吗？" class='layui-btn layui-btn-sm layui-btn-primary'>删除日志</button>-->
+<!--{/if}-->
+{/block}
+
+{block name="content"}
+<div class="think-box-shadow table-block">
+    {include file='help/index_search'}
+    <table class="layui-table margin-top-10" lay-skin="line">
+        {notempty name='list'}
+        <thead>
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+                <label><input data-auto-none data-check-target='.list-check-box' type='checkbox'></label>
+            </th>
+            <th class='text-left nowrap'>ID</th>
+            <th class='text-left nowrap'>操作行为</th>
+            <th class='text-left nowrap'>帮办类型</th>
+            <th class='text-left nowrap'>求助时间</th>
+            <th class='text-left nowrap'>联系方式</th>
+            <th class='text-left nowrap'>发布时间</th>
+            <th class='text-left nowrap'>状态</th>
+            <th class='text-left nowrap'>处理</th>
+            <th class='text-left nowrap'>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <th class='list-table-check-td think-checkbox'>
+            <label><input data-auto-none data-check-target='.list-check-box' type='checkbox'></label>
+            </th>
+            <th>{$vo.id}</th>
+            <th>{$vo.title}</th>
+            <th>{$vo.hname}</th>
+            <th>{$vo.timer}</th>
+            <th>{$vo.telphone}</th>
+            <th>{$vo.pubdate}</th>
+            {if $vo.status ==0}
+            <th><span class="layui-bg-red">待分配</span></th>
+            <th><a  data-modal='{:url("specify")}?id={$vo.id}' href='javascript:void(0)' class="layui-btn layui-btn-xs" data-title="分配处理单位">分配</a></th>
+            {elseif $vo.status==1}
+            <th><span class="layui-bg-orange">已分配、待处理</span></th>
+            <th><a  data-modal='{:url("process")}?id={$vo.id}' href='javascript:void(0)' class="layui-btn layui-btn-xs layui-btn-warm" data-title="分配处理单位">待处理</a></th>
+            {elseif $vo.status==2}
+            <th><span class="layui-bg-blue">处理完成、待审核</span></th>
+            <th><a  data-modal='{:url("shenhe")}?id={$vo.id}' href='javascript:void(0)' class="layui-btn layui-btn-xs layui-btn-normal" data-title="审核">审核</a></th>
+            {else}
+            <th colspan="2"> <span class="layui-bg-green">处理完毕</span></th>
+            {/if}
+            <th>
+                <a  data-modal='{:url("edit")}?id={$vo.id}' href='javascript:void(0)' class="layui-btn layui-btn-xs layui-btn-warm" data-title="编辑标签">编辑</a>
+                <a class="layui-btn layui-btn-xs layui-btn-danger" data-confirm="确定要删除该帮办吗？"   data-action="{:url('remove')}" data-value="id#{$vo.id}" data-csrf="{:systoken('remove')}">删 除</a>
+            </th>
+        </tr>
+        {/foreach}
+        </tbody>
+        {/notempty}
+    </table>
+    {empty name='list'}<span class="notdata">没有记录哦</span>{else}{$pagehtml|raw|default=''}{/empty}
+</div>
+{/block}
+
+{block name='script'}
+<script>
+    (function (layers) {
+        $('body').off('click', '[data-tips-desc]').on('click', '[data-tips-desc]', function () {
+            return layers.push(layer.tips($(this).find('textarea').html(), this, {tips: 3, time: 0, maxWidth: 500})), false;
+        }).off('click', '.layui-body').on('click', '.layui-body', function () {
+            layers.forEach(function (value, index) {
+                layer.close(value), delete layers[index];
+            });
+        });
+        $(window).on('hashchange', function () {
+            $('.layui-body').trigger('click');
+        });
+    })([]);
+</script>
+{/block}
